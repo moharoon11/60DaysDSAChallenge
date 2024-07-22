@@ -9,6 +9,20 @@ public class SortLL {
     public static class ListNode {
         int val;
         ListNode next;
+
+        ListNode(int data) {
+            this.val = data;
+        }
+
+        ListNode(int data, ListNode next) {
+            this.val = data;
+            this.next = next;
+        }
+
+        ListNode() {
+            this.val = 0;
+            this.next = null;
+        }
     }
 
 

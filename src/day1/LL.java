@@ -35,13 +35,13 @@ public class LL {
 
 
     private static Node removeHead(Node head) {
-        if(head == null) return null;
+        if(head == null) return head;
         head = head.next;
         return head;
     }
 
     private static Node removeTail(Node head) {
-        if(head == null || head.next == null) return head;
+        if(head == null || head.next == null) return null;
         Node temp = head;
         while(temp.next.next != null) {
             temp = temp.next;
@@ -55,7 +55,6 @@ public class LL {
           if(position == 1) {
               return removeHead(head);
           }
-
           Node temp = head;
           int counter = 0;
           Node previous = null;
@@ -123,8 +122,6 @@ public class LL {
             }
             temp = temp.next;
         }
-
-
         return head;
     }
 
@@ -145,6 +142,7 @@ public class LL {
                 Node node = new Node(data);
                 node.next = previous.next;
                 previous.next = node;
+                break;
             }
             previous = temp;
             temp = temp.next;

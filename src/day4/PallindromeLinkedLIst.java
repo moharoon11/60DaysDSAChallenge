@@ -86,6 +86,9 @@ public class PallindromeLinkedLIst {
             fast = fast.next.next;
         }
 
+
+        // the tail is head of the second half but we call it tail because it is the last element of the
+        // linked list
         Node tail = reverse(slow.next);
         Node second = tail;
 

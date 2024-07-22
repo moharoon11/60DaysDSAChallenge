@@ -33,6 +33,7 @@ public class DeleteNodeInLinkedList {
      ListNode next;
      ListNode(int x) { val = x; }
    }
+
     public void deleteNode(ListNode node) {
         ListNode temp = node;
         ListNode previous = null;

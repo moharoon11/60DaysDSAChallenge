@@ -105,6 +105,8 @@ public class DLL {
         return head;
     }
 
+
+    // the given node to remove will definitely not be head
     public static void remove(Node node) {
         Node prev = node.prev;
         Node next = node.next;

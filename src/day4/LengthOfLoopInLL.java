@@ -41,7 +41,7 @@ public class LengthOfLoopInLL {
 
         }
 
-        return -10;
+        return -1;
     }
 
     // brute force using hashing

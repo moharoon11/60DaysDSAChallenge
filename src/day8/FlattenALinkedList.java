@@ -46,7 +46,7 @@ public class FlattenALinkedList {
 
     // recursive approach
     public static ListNode flattenLinkedList(ListNode head) {
-        if(head == null || head.next != null) {
+        if(head == null || head.next == null) {
             return head;
         }
 
@@ -69,6 +69,19 @@ public class FlattenALinkedList {
             }
             res.next = null;
         }
-        return dummyNode.next;
+
+        if (l1 != null) {
+            res.child = l1;
+        } else {
+            res.child = l2;
+        }
+
+        // Break the last node's
+        // link to prevent cycles
+        if (dummyNode.child != null) {
+            dummyNode.child.next = null;
+        }
+
+        return dummyNode.child;
     }
 }

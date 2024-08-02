@@ -44,6 +44,7 @@ public class RemoveNthNodeLL {
         for(int i=1; i<=n; i++) fast = fast.next;
         if(fast == null) return head.next;
         ListNode slow = head;
+
         while(fast.next != null) {
             slow = slow.next;
             fast = fast.next;

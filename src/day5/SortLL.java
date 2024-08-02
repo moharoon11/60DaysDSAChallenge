@@ -31,7 +31,7 @@ public class SortLL {
         List<Integer> values = new ArrayList<>();
         ListNode temp = head;
 
-        while(temp != null) {
+        while (temp != null) {
             values.add(temp.val);
             temp = temp.next;
         }

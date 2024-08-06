@@ -52,6 +52,7 @@ public class SortLL {
 
         ListNode middle = findMiddle(head);
         ListNode secondHead = middle.next;
+
         middle.next = null;
         ListNode leftHead = sortList1(head);
         ListNode rightHead = sortList1(secondHead);

@@ -13,7 +13,8 @@ public class AsteroidsCollision {
                 list.add(asteroids[i]);
             } else {
 
-                while(!list.isEmpty() && list.get(list.size() - 1) > 0 && list.get(list.size()-1) < Math.abs(asteroids[i])) {
+                while(!list.isEmpty() && list.get(list.size() - 1) > 0
+                        && list.get(list.size()-1) < Math.abs(asteroids[i])) {
                     list.remove(list.size()-1);
                 }
 

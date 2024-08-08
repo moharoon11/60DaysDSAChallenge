@@ -29,7 +29,10 @@ public class NextGreaterElement2 {
                 }
             }
 
-            if(!found) result[i] = -1;
+            if(!found) {
+                result[i] = -1;
+                previous[i] = nums[i];
+            }
 
         }
         return result;

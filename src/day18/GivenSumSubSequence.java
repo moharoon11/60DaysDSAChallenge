@@ -50,11 +50,35 @@ public class GivenSumSubSequence {
         return false;
     }
 
+    public static int countSubsequenceSum(int[] arr, int n, int sum) {
+        return helperCount(0, 0, arr, n, sum);
+    }
+
+    public static int helperCount(int index, int addedSum, int[] arr, int n, int sum) {
+        if(index >= n) {
+            if(addedSum == sum) {
+                return 1;
+            }
+            return 0;
+        }
+
+
+        addedSum += arr[index];
+        int left = helperCount(index + 1, addedSum, arr, n, sum);
+
+
+        addedSum -= arr[index];
+        int right = helperCount(index + 1, addedSum, arr, n, sum);
+
+        return left + right;
+    }
+
     public static void main(String[] args) {
         int[] arr = {1,2,1};
         int sum = 2;
         int n = arr.length;
         printSequence(arr, n, sum);
        // printAnyOneSequence(arr, n, sum);
+        System.out.println(countSubsequenceSum(arr, n, sum));
     }
 }

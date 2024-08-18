@@ -5,12 +5,12 @@ public class ValidParanthesisChecker {
     // Brute force approach
     // TC: O(3 ^ n)
     // SC: O(n)
-    public boolean checkValidString(String s) {
+    public static boolean checkValidString(String s) {
         if(s.length() == 1) return false;
         return func(s, 0, 0);
     }
 
-    public boolean func(String s, int index, int count) {
+    public static boolean func(String s, int index, int count) {
 
         if(count < 0) return false;
 
@@ -19,13 +19,18 @@ public class ValidParanthesisChecker {
         }
 
         if(s.charAt(index) == '(') {
-            func(s, index + 1, count + 1);
+            return func(s, index + 1, count + 1);
         } else if(s.charAt(index) == ')') {
-            func(s, index + 1, count - 1);
+            return func(s, index + 1, count - 1);
         }
 
         return (func(s, index + 1, count + 1) ||
                 func(s, index + 1, count) ||
                 func(s, index + 1, count - 1));
+    }
+
+    public static void main(String[] args) {
+        String s = "(*)";
+        System.out.println(checkValidString(s));
     }
 }

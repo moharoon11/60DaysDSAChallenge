@@ -2,11 +2,11 @@ package day23;
 
 public class JumpGame2 {
 
-    public int jump(int[] nums) {
+    public static int jump(int[] nums) {
         return func(0, 0, nums);
     }
 
-    public int func(int index, int jump, int[] nums) {
+    public static int func(int index, int jump, int[] nums) {
 
         if(index >= nums.length - 1) return jump;
 
@@ -18,5 +18,11 @@ public class JumpGame2 {
         }
 
         return mini;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {2,3,1,1,4};
+        int ans = jump(arr);
+        System.out.println(ans);
     }
 }

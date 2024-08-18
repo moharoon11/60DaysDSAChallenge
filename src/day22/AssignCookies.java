@@ -10,7 +10,7 @@ public class AssignCookies {
 
     // TC: O(n log n) + O(m log n) + O(n)
     // SC: O(1)
-    public int findContentChildren(int[] g, int[] s) {
+    public static int findContentChildren(int[] g, int[] s) {
 
         int left = 0;
         int right = 0;
@@ -23,6 +23,13 @@ public class AssignCookies {
             right++;
         }
         return left;
+    }
+
+    public static void main(String[] args) {
+        int[] greed = {1, 5, 3, 3, 4};
+        int[] size = {4, 2, 1, 2, 1, 3};
+        int ans = findContentChildren(greed, size);
+        System.out.println(ans);
     }
 
 }

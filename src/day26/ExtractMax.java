@@ -1,14 +1,12 @@
 package day26;
 
-import java.lang.Comparable;
 import java.util.ArrayList;
 
-
-public class MaxHeap<T extends Comparable<T>> {
+public class ExtractMax<T extends Comparable<T>> {
 
     private ArrayList<T> list;
 
-    public MaxHeap() {
+    public ExtractMax() {
         list = new ArrayList<>();
     }
 
@@ -85,16 +83,17 @@ public class MaxHeap<T extends Comparable<T>> {
 
     public ArrayList<T> heapSort() throws Exception {
         ArrayList<T> data = new ArrayList<>();
-
         while(!list.isEmpty()) {
             data.add(this.remove());
         }
-
         return data;
     }
 
-
-    public static void main(String[] args) {
-
+    public T extractMax() throws Exception {
+        if(list.isEmpty()) {
+            throw new Exception("List is empty");
+        }
+        return this.remove();
     }
+
 }

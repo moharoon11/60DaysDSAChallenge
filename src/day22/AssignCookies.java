@@ -16,6 +16,7 @@ public class AssignCookies {
         int right = 0;
         Arrays.sort(g);
         Arrays.sort(s);
+
         while(left < g.length && right < s.length) {
             if(s[right] >= g[left]) {
                 left++;

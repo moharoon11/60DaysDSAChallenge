@@ -56,7 +56,8 @@ public class KthSmallestElement {
       //  Output:  7
 
 
-         int[] arr1 = {7, 10, 4, 20, 15}, int k1 = 4;
+         int[] arr1 = {7, 10, 4, 20, 15};
+         int k1 = 4;
        // Output:  15
     }
 }

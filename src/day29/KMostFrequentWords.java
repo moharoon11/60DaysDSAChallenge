@@ -16,7 +16,7 @@ import java.util.*;
  */
 public class KMostFrequentWords {
 
-    class Solution {
+    
 
         public class Pair {
 
@@ -57,5 +57,5 @@ public class KMostFrequentWords {
 
             return ansList;
         }
-    }
+
 }

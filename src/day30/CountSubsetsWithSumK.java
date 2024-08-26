@@ -36,29 +36,25 @@ public class CountSubsetsWithSumK {
         return subsets;
     }
 
-    // this is the better approach without using dp
-    // but it is not working in gfg
-    public int perfectSum1(int arr[], int n, int sum) {
-        return countSubsets1(arr, n, sum, 0);
+    // This is better compare to previous still TLE ERROR
+    public int solve(int[] arr, int n, int index, int sum) {
+
+        if(index == n) {
+            if(sum == 0) {
+                return 1;
+            }
+            return 0;
+        }
+
+        int count = 0;
+
+        count += solve(arr, n, index+1, sum - arr[index]);
+        count += solve(arr, n, index + 1, sum);
+        return count;
     }
 
-    public static int countSubsets1(int[] arr, int n, int sum, int index) {
-        // Base Cases
-        if (sum == 0) {
-            return 1; // One valid subset (the empty subset) that sums to zero
-        }
-        if (index >= n) {
-            return 0; // No subset can sum to the target if there are no elements left
-        }
 
-        // If the current element is greater than the sum, ignore it
-        if (arr[index] > sum) {
-            return countSubsets1(arr, n, sum, index + 1);
-        }
+    // optimal solution will be using dynamic programming
 
-        // Return the sum of the count of subsets that include the current element
-        // and the count of subsets that exclude the current element
-        return countSubsets1(arr, n, sum, index + 1) // Exclude current element
-                + countSubsets1(arr, n, sum - arr[index], index + 1); // Include current element and move to the next index
-    }
+
 }

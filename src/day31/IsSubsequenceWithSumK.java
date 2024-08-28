@@ -22,5 +22,5 @@ public class IsSubsequenceWithSumK {
         int[] arr = {1, 2, 3};
     }
 
-    // Optimal solution will be using dynamic programming
+    // Optimal approach will be using dynamic programming
 }
